@@ -1,5 +1,5 @@
 ## Abaut SIMPLE807
-### Simple framework. Fast and easy. Designed by davi807
+### Simple framework. Fast and easy.
 
 * Main controller name == **controllerName**_controller.php
 * All controllers recomended to have indexAction function if Routing not enabled
