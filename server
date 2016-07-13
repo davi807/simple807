@@ -1,0 +1,34 @@
+<?php
+
+/*
+File for php built-in server
+*/
+
+//Set the public directory address
+$pub_dir = 'public';
+
+
+
+if(!isset($argc)):
+	error_log($_SERVER['REQUEST_URI'],4);
+	$base = explode('/',$_SERVER['REQUEST_URI']);
+	if($base[1] == $pub_dir){
+		if(!file_exists('.'.$_SERVER['REQUEST_URI']))
+			http_response_code(404);
+		else{
+			header('Content-Type: '.filetype('.'.$_SERVER['REQUEST_URI']) );
+			readfile('.'.$_SERVER['REQUEST_URI']);
+		}
+	}else
+		include 'app.php';
+	exit;
+endif;
+
+
+
+if(isset($argv[1]) && (int)$argv[1]>0 )
+	$port = $argv[1];
+else
+	$port = '8080';
+echo 'Starting server on localhost ',$port,PHP_EOL,'Press CTRL+C for exit'.PHP_EOL;
+$str = exec(PHP_BINARY.' -S localhost:'.$port.' server');

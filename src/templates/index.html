@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>It is simple!</title>
+</head>
+<body>
+  <h2>Hi i'm indexAction from 
+    <span>index_controller.php</span>
+  </h2>
+  
+  <br>
+  <a href="<?=mklink("hello/world")?>">Hello World</a>
+ 
+  <form action="[hello]">
+  <input type="text" name="some_name">
+  <input type="submit" value="Say Hello">
+  </form>
+  
+  <a href="<?=mklink("home")?>" >Go home</a>
+  <br>
+  
+  <a href="<?=mklink("smarty")?>">Try Smarty</a>
+  <hr>
+  <span>
+    Open 
+    <b style="color:green"> 
+    src/controllers/index_controller.php
+    </b> file for edit this page.
+  </span>
+  
+</body>
+</html>
