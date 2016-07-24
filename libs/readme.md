@@ -1,0 +1,1 @@
+##Full libs list is [here](https://github.com/ziadoz/awesome-php).
