@@ -1,1 +1,0 @@
-Librery data and settings goes here
