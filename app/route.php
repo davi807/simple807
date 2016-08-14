@@ -15,7 +15,7 @@ if(!file_exists($controller)){
     http_response_code(404);
     echo ' '; exit;
   }
-  $pubf = '.'.ROOT_ADDR.PUB.implode('/',$path);
+  $pubf = PUB.implode('/',$path);
   if(file_exists($pubf)){
     header('Content-Type: '.filetype($pubf) );
 	readfile($pubf);
