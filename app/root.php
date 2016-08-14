@@ -9,7 +9,11 @@ set_include_path(
 mb_internal_encoding('UTF-8');
 ini_set('session.use_only_cookies','1');
 $ctrl_error =  null;
-require_once "route.php";
 require_once "func.php";
+require_once "route.php";
 require_once "autoload.php";
 require_once "src/require.php";
+
+if(!file_exists($controller)):
+    to_page(mklink('error/not_found'));
+endif;
