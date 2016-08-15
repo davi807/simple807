@@ -15,5 +15,12 @@ require_once "autoload.php";
 require_once "src/require.php";
 
 if(!file_exists($controller)):
-    to_page(mklink('error/not_found'));
+  $pubf = PUB.implode('/',$path);
+  if(file_exists($pubf)){
+    header('Content-Type: '.filetype($pubf) );
+	readfile($pubf);
+    exit;
+  }
+  else
+  	to_page(mklink('error/not_found'));
 endif;
